@@ -1,8 +1,8 @@
 ```verilog
-module or_gate(A, B, out);
+module xor_gate(A, B, out);
     input A, B;
     output out;
-    mux m(A, 1'b1, B, out);
+    mux m(A, ~A, B, out);
 endmodule
 
 module mux(a, b, in, out);
