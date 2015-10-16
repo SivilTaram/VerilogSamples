@@ -1,10 +1,8 @@
 ```verilog
-module nand_gate(A, B, out);
+module xnor_gate(A, B, out);
     input A, B;
     output out;
-    wire t;
-    mux m1(1'b0, A, B, t);
-    mux m2(1'b1, 1'b0, t, out);
+    mux m(~A, A, B, out);
 endmodule
 
 module mux(a, b, in, out);
